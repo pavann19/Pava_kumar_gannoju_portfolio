@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Gannoju | AI/ML & Cybersecurity Enthusiast</title>
-    <meta name="description" content="Personal portfolio of Pavan Gannoju, an AI/ML and Cybersecurity Enthusiast specializing in building intelligent systems.">
+    <!-- **UPDATED TITLE** -->
+    <title>Pavan Gannoju | Backend & Systems Engineer</title>
+    <meta name="description" content="Personal portfolio of Pavan Kumar Gannoju, a final-year Computer Science undergraduate specializing in building scalable, fault-tolerant backend systems.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     
     <!-- Custom Styles & Tailwind Directives -->
     <style type="text/tailwindcss">
@@ -25,34 +26,21 @@
             }
         }
         @layer components {
-            /* Custom style for skill badges */
             .skill-badge {
                 @apply bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300 text-sm font-medium px-4 py-2 rounded-full transition-transform transform hover:scale-110;
             }
-
-            /* Custom style for form inputs */
-            .form-input {
-                @apply w-full px-4 py-3 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300;
-            }
-
-            /* Scroll Reveal Animation */
             .fade-in-section {
                 opacity: 0;
                 transform: translateY(30px);
                 transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
             }
-
             .fade-in-section.is-visible {
                 opacity: 1;
                 transform: translateY(0);
             }
-
-            /* Style for sticky header on scroll */
             #header.scrolled {
                 @apply shadow-lg dark:shadow-md dark:shadow-indigo-900/20;
             }
-
-            /* Blinking dot animation for active timeline item */
             @keyframes blink {
                 50% {
                     background-color: rgb(129 140 248); /* indigo-400 */
@@ -62,19 +50,15 @@
             .blinking-dot {
                 animation: blink 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
             }
-            
-            /* Theme Toggle Button Patch */
             #theme-toggle svg {
                 @apply transition-all duration-300 ease-in-out;
             }
-            /* Light mode (default state) */
             #theme-toggle #theme-toggle-light-icon {
                 @apply opacity-0 -rotate-90 scale-50;
             }
             #theme-toggle #theme-toggle-dark-icon {
                 @apply opacity-100 rotate-0 scale-100;
             }
-            /* Dark mode active state */
             .dark #theme-toggle #theme-toggle-light-icon {
                 @apply opacity-100 rotate-0 scale-100;
             }
@@ -85,7 +69,6 @@
     </style>
 
     <script>
-        // Set theme on initial load to prevent FOUC (Flash of Unstyled Content)
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
         } else {
@@ -108,9 +91,7 @@
             </div>
             <div class="flex items-center">
                 <button id="theme-toggle" class="relative p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-50 dark:focus:ring-offset-slate-900 focus:ring-indigo-500 transition-colors" aria-label="Toggle theme">
-                    <!-- Sun Icon -->
                     <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zm7.536 2.464a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path></svg>
-                    <!-- Moon Icon -->
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 </button>
                 <button id="mobile-menu-button" class="md:hidden ml-4 p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800" aria-label="Open menu">
@@ -118,7 +99,6 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-100 dark:bg-slate-800">
             <a href="#about" class="block py-2 px-6 text-sm hover:bg-slate-200 dark:hover:bg-slate-700">About</a>
             <a href="#projects" class="block py-2 px-6 text-sm hover:bg-slate-200 dark:hover:bg-slate-700">Projects</a>
@@ -129,121 +109,161 @@
     </header>
 
     <main class="container mx-auto px-6 pt-24">
-        <!-- Home Section -->
+        
+        <!-- =================================================================== -->
+        <!-- START: UPDATED HOME SECTION -->
+        <!-- =================================================================== -->
         <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center -mt-16">
             <div class="fade-in-section">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white">Pavan Gannoju</h1>
-                <p class="mt-4 text-lg md:text-xl text-indigo-600 dark:text-indigo-400 font-semibold">AI/ML Engineer & Software Engineer Developer</p>
-                <p class="mt-6 max-w-2xl mx-auto text-base md:text-lg text-slate-600 dark:text-slate-400">
-                    Building intelligent systems through AI/ML and software engineering. Focused on impactful, scalable solutions. Minor in AI @ IIT Ropar.
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white">Pavan Kumar Gannoju</h1>
+                <p class="mt-4 text-lg md:text-xl text-indigo-600 dark:text-indigo-400 font-semibold">Backend & Systems Engineer specializing in AI Platforms</p>
+                <p class="mt-6 max-w-3xl mx-auto text-base md:text-lg text-slate-600 dark:text-slate-400">
+                    I'm a final-year Computer Science undergraduate specializing in building scalable, fault-tolerant backend systems. I deliver production-grade microservices using Docker, FastAPI, and AWS, with a strong foundation in system design, CI/CD, and observability.
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#projects" class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105">View My Work</a>
-                    <!-- Make sure to place your resume PDF file in the same directory as this HTML file -->
-                    <a href="Pavan_Gannoju_SDE_Resume.pdf" download class="px-8 py-3 bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200 font-semibold rounded-lg shadow-md hover:bg-slate-300 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 transition-all duration-300 transform hover:scale-105">Download Resume</a>
+                    <a href="#projects" class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-105">View My Projects</a>
+                    <!-- **IMPORTANT**: Replace with the filename of your finalized Master Resume -->
+                    <a href="Pavan_Gannoju_Resume_SDE_2026.pdf" download class="px-8 py-3 bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-200 font-semibold rounded-lg shadow-md hover:bg-slate-300 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 transition-all duration-300 transform hover:scale-105">Download Resume</a>
                 </div>
             </div>
         </section>
+        <!-- =================================================================== -->
+        <!-- END: UPDATED HOME SECTION -->
+        <!-- =================================================================== -->
 
-        <!-- About Me Section -->
+
+        <!-- =================================================================== -->
+        <!-- START: UPDATED ABOUT SECTION -->
+        <!-- =================================================================== -->
         <section id="about" class="py-20 md:py-32">
-            <div class="fade-in-section max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900 dark:text-white">About Me</h2>
-                <div class="grid md:grid-cols-5 gap-12 items-center">
-                    <div class="md:col-span-3">
-                        <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">Education</h3>
-                        <ul class="space-y-4 text-slate-600 dark:text-slate-400">
-                            <li>
-                                <p class="font-bold text-slate-800 dark:text-slate-200">B.Tech in CSE (AI/ML)</p>
-                                <p>Visvesvaraya College of Engineering & Technology</p>
-                            </li>
-                            <li>
-                                <p class="font-bold text-slate-800 dark:text-slate-200">Minor in AI</p>
-                                <p>IIT Ropar (Sept 2024 – July 2025)</p>
-                            </li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold mt-8 mb-4 text-indigo-600 dark:text-indigo-400">Interests</h3>
-                        <p class="text-slate-600 dark:text-slate-400">
-                           Focused on Software Development and AI/ML (including GenAI), I aim to build intelligent, scalable systems that solve real-world problems. I'm driven by curiosity and a passion for creating solutions that can learn, reason, and adapt.
+            <div class="fade-in-section max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">About Me</h2>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">My Story</h3>
+                     <div class="space-y-4 text-slate-600 dark:text-slate-400 text-left md:text-center max-w-2xl mx-auto">
+                        <p>
+                            As a backend engineer, my passion lies in solving complex engineering challenges and building the robust, scalable infrastructure that powers intelligent applications. I'm particularly interested in the intersection of distributed systems and AI, and I am driven by the opportunity to build technology that has a meaningful impact.
+                        </p>
+                        <p>
+                            I am currently completing my B.Tech in Computer Science (AI/ML) at Visvesvaraya College, complemented by a Minor in Artificial Intelligence from IIT Ropar. Outside of technology, I enjoy exploring historical temples, creating 3D environments, and competitive gaming.
                         </p>
                     </div>
-                    <div class="md:col-span-2 bg-white dark:bg-slate-800/50 p-8 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700">
-                        <blockquote class="text-xl italic border-l-4 border-indigo-500 pl-6 text-slate-800 dark:text-slate-200">
-                            "I don’t just learn tech — I shape it."
-                            <cite class="block mt-4 text-base not-italic text-slate-500 dark:text-slate-400">— Pavan Gannoju</cite>
-                        </blockquote>
-                    </div>
                 </div>
             </div>
         </section>
+        <!-- =================================================================== -->
+        <!-- END: UPDATED ABOUT SECTION -->
+        <!-- =================================================================== -->
 
-        <!-- Projects Section -->
+
+        <!-- =================================================================== -->
+        <!-- START: UPDATED PROJECTS SECTION -->
+        <!-- =================================================================== -->
         <section id="projects" class="py-20 md:py-32 bg-slate-100 dark:bg-slate-800/50 rounded-lg">
             <div class="fade-in-section max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900 dark:text-white">Projects</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Project Card 1 -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900 dark:text-white">Featured Projects</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Project Card 1: Microservices -->
                     <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col justify-between border border-slate-200 dark:border-slate-700">
                         <div class="p-8">
-                            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Task Breakdown AI Agent</h3>
-                            <p class="text-slate-600 dark:text-slate-400">Task Breakdown Chat is an interactive AI-powered assistant that decomposes high-level tasks into clear, actionable subtasks. Built with Streamlit and Google Gemini API, it provides step-by-step guidance, explains the importance of each step, and suggests the necessary tools or skills, helping users efficiently plan and execute projects.</p>
+                            <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">Fault-Tolerant Microservices Platform</h3>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400">
+                                <li>Architected & deployed 6 containerized microservices (Python, FastAPI, Docker), achieving >99.5% uptime.</li>
+                                <li>Implemented resilience patterns (health checks, retry logic, fallbacks), reducing crash recovery time by 60%.</li>
+                                <li>Automated CI/CD pipeline with GitHub Actions, enabling seamless updates and <5-minute rollbacks.</li>
+                            </ul>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">FastAPI</span>
+                                <span class="skill-badge">Docker</span>
+                                <span class="skill-badge">Microservices</span>
+                                <span class="skill-badge">GitHub Actions</span>
+                            </div>
                         </div>
-                         <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
-                            <a href="https://taskbreakdownagent-fda6dufpnhqsmgxvz8ljiz.streamlit.app/" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
-                            <a href="https://github.com/pavann19/taskBreakDOwnAgent.git" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Code</a>
+                        <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
+                            <a href="https://github.com/pavann19/resilient-microservices" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Code</a>
+                            <a href="#" class="text-sm font-semibold text-slate-400 dark:text-slate-500 cursor-not-allowed">Demo (Private)</a>
                         </div>
                     </div>
-                    <!-- Project Card 2-->
+
+                    <!-- Project Card 2: Auto-Scaler -->
                     <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col justify-between border border-slate-200 dark:border-slate-700">
                         <div class="p-8">
-                            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Resilient Microservices Deployment Platform</h3>
-                            <p class="text-slate-600 dark:text-slate-400">Designed and deployed a cloud-ready backend platform demonstrating fault-tolerant microservices. Built with FastAPI, Docker, and Redis, the system runs six independent services managed via Docker Compose. A gateway service aggregates responses, applies retry and fallback logic, and ensures uptime even when dependent services fail.</p>
+                            <h3 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">Cloud Auto-Scaler with Real-Time Monitoring</h3>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400">
+                                <li>Engineered a metric-driven auto-scaler (Python, Prometheus, AWS Lambda) for containerized apps.</li>
+                                <li>Reduced idle compute costs by ~43% through custom, metric-based scaling policies.</li>
+                                <li>Built custom Grafana dashboards for real-time CPU, memory, & I/O monitoring.</li>
+                                <li>Reduced incident MTTD by 67% and automated system scale-up to <30 seconds via CloudWatch alarms.</li>
+                            </ul>
+                             <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">AWS Lambda</span>
+                                <span class="skill-badge">Prometheus</span>
+                                <span class="skill-badge">Grafana</span>
+                                <span class="skill-badge">CloudWatch</span>
+                            </div>
                         </div>
-                         <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
-                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
-                            <a href="https://github.com/pavann19/resilient-microservices" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Code</a>
-                        </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col justify-between border border-slate-200 dark:border-slate-700">
-                        <div class="p-8">
-                            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">LLM Fine-Tuning & RAG QA System</h3>
-                            <p class="text-slate-600 dark:text-slate-400">Developed a question-answering system using fine-tuned Large Language Models and Retrieval-Augmented Generation for domain-specific knowledge.</p>
-                        </div>
-                         <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
-                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
-                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Code</a>
-                        </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col justify-between border border-slate-200 dark:border-slate-700">
-                        <div class="p-8">
-                            <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Auto documentation tool AI</h3>
-                            <p class="text-slate-600 dark:text-slate-400">Developed a auto documentation tool that can generate readme files for github code files.</p>
-                        </div>
-                         <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
-                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
-                            <a href="#" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View Code</a>
+                        <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-4">
+                            <a href="#" class="text-sm font-semibold text-slate-400 dark:text-slate-500 cursor-not-allowed">Code (Private)</a>
+                             <a href="#" class="text-sm font-semibold text-slate-400 dark:text-slate-500 cursor-not-allowed">Demo (Private)</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- =================================================================== -->
+        <!-- END: UPDATED PROJECTS SECTION -->
+        <!-- =================================================================== -->
 
-        <!-- Experience Section -->
+
+        <!-- =================================================================== -->
+        <!-- START: UPDATED EXPERIENCE SECTION -->
+        <!-- =================================================================== -->
         <section id="experience" class="py-20 md:py-32">
             <div class="fade-in-section max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-900 dark:text-white">Experience</h2>
                 <div class="relative">
-                    <!-- The vertical line -->
                     <div class="absolute w-0.5 h-full bg-slate-200 dark:bg-slate-700 left-5 md:left-1/2 -translate-x-1/2"></div>
                     
                     <div class="space-y-16">
-                        <!-- Experience Item 1: Current Role -->
+                        
+                        <!-- Experience Item 1: Digital Nexus AI -->
                         <div class="relative">
                             <div class="md:flex items-start">
                                 <div class="w-full md:w-1/2 md:text-right md:pr-12">
-                                    <p class="font-semibold text-indigo-600 dark:text-indigo-400">June 2025 - Present</p>
+                                    <p class="font-semibold text-indigo-600 dark:text-indigo-400">May 2025 – Sep 2025</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-5 md:left-1/2 -translate-x-1/2 -top-1">
+                                <div class="w-6 h-6 rounded-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center ring-2 ring-indigo-500/50">
+                                    <div class="w-3 h-3 bg-indigo-500 rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 md:flex">
+                                <div class="md:w-1/2"></div>
+                                <div class="w-full md:w-1/2 md:pl-12">
+                                    <div class="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-6 rounded-lg">
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineering Intern</h3>
+                                        <p class="font-semibold text-slate-600 dark:text-slate-300">Digital Nexus AI (Full-Time Summer Internship)</p>
+                                        <ul class="mt-4 list-disc list-inside space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                                            <li>Engineered scalable backend systems (FastAPI, Docker, AWS Lambda), sustaining 100+ RPS and reducing infra costs by 31%.</li>
+                                            <li>Implemented modular REST APIs with JWT auth, Redis rate limiting, and RBAC.</li>
+                                            <li>Improved API response speed by 23% using async I/O and Redis caching.</li>
+                                            <li>Maintained 99.97% uptime with an observability stack (Prometheus, Grafana, CloudWatch).</li>
+                                            <li>Automated CI/CD pipelines with GitHub Actions for daily deployments and <5-min rollbacks.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 2: Prodigal AI -->
+                        <div class="relative">
+                             <div class="md:flex items-start md:flex-row-reverse">
+                                <div class="w-full md:w-1/2 md:text-left md:pl-12">
+                                    <p class="font-semibold text-slate-600 dark:text-slate-400">Mar 2025 – Oct 2025</p>
                                 </div>
                             </div>
                             <div class="absolute left-5 md:left-1/2 -translate-x-1/2 -top-1">
@@ -252,46 +272,27 @@
                                 </div>
                             </div>
                             <div class="mt-4 md:mt-0 md:flex">
-                                <div class="md:w-1/2"></div>
-                                <div class="w-full md:w-1/2 md:pl-12">
-                                    <div class="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-6 rounded-lg">
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Gen AI/LLM Intern</h3>
-                                        <p class="font-semibold text-slate-600 dark:text-slate-300">Digital Nexus AI</p>
-                                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Focused on fine-tuning LLMs and developing generative models for content creation.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Experience Item 2: Past Role -->
-                         <div class="relative">
-                            <div class="md:flex items-start md:flex-row-reverse">
-                                <div class="w-full md:w-1/2 md:text-left md:pl-12">
-                                    <p class="font-semibold text-slate-600 dark:text-slate-400">March 2025 - May 2025</p>
-                                </div>
-                            </div>
-                            <div class="absolute left-5 md:left-1/2 -translate-x-1/2 -top-1">
-                                <div class="w-6 h-6 rounded-full bg-slate-50 dark:bg-slate-900 flex items-center justify-center ring-2 ring-slate-300 dark:ring-slate-700">
-                                    <div class="w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full"></div>
-                                </div>
-                            </div>
-                            <div class="mt-4 md:mt-0 md:flex">
                                 <div class="w-full md:w-1/2 md:pr-12">
                                      <div class="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-6 rounded-lg md:text-right">
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Agentic AI Intern</h3>
-                                        <p class="font-semibold text-slate-600 dark:text-slate-300">Prodigal AI Technologies</p>
-                                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Worked on building autonomous AI agents for task automation and complex problem-solving.</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineering Intern</h3>
+                                        <p class="font-semibold text-slate-600 dark:text-slate-300">Prodigal AI Technologies (Part-Time)</p>
+                                        <ul class="mt-4 list-disc list-inside space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                                            <li>Constructed a hybrid semantic search retriever (FAISS & SQL), reducing query latency by 34%.</li>
+                                            <li>Architected & deployed 6 containerized microservices, achieving >99.5% uptime.</li>
+                                            <li>Strengthened fault tolerance with retry logic, circuit breakers, and fallbacks, reducing failures by 40%.</li>
+                                            <li>Developed a real-time alerting system, cutting incident MTTD to <1 minute.</li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div class="md:w-1/2"></div>
                             </div>
                         </div>
 
-                        <!-- Experience Item 3: Past Role -->
+                        <!-- Experience Item 3: JNTUH -->
                         <div class="relative">
                             <div class="md:flex items-start">
                                 <div class="w-full md:w-1/2 md:text-right md:pr-12">
-                                    <p class="font-semibold text-slate-600 dark:text-slate-400">Jan 2024 - Dec 2024</p>
+                                    <p class="font-semibold text-slate-600 dark:text-slate-400">Feb 2024 – Jul 2024</p>
                                 </div>
                             </div>
                             <div class="absolute left-5 md:left-1/2 -translate-x-1/2 -top-1">
@@ -303,63 +304,68 @@
                                 <div class="md:w-1/2"></div>
                                 <div class="w-full md:w-1/2 md:pl-12">
                                     <div class="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-6 rounded-lg">
-                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Research Assistant (ML)</h3>
-                                        <p class="font-semibold text-slate-600 dark:text-slate-300">JNTUH</p>
-                                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Contributed to research on perception systems and path planning algorithms for self-driving cars.</p>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Project Contributor</h3>
+                                        <p class="font-semibold text-slate-600 dark:text-slate-300">JNTUH - Autonomous Vehicle Data Pipeline</p>
+                                        <ul class="mt-4 list-disc list-inside space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                                            <li>Implemented a data pipeline to process >1.5M vehicle sensor logs using Python & SQL.</li>
+                                            <li>Enhanced anomaly detection accuracy by 10% via optimized time-windowing logic.</li>
+                                            <li>Developed analytics dashboards, reducing manual data inspection time by 45%.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
+        <!-- =================================================================== -->
+        <!-- END: UPDATED EXPERIENCE SECTION -->
+        <!-- =================================================================== -->
 
-        <!-- Skills Section -->
+
+        <!-- =================================================================== -->
+        <!-- START: UPDATED SKILLS SECTION -->
+        <!-- =================================================================== -->
         <section id="skills" class="py-20 md:py-32 bg-slate-100 dark:bg-slate-800/50 rounded-lg">
-            <div class="fade-in-section max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-slate-900 dark:text-white">Skills</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- SDE Skills Card -->
-                    <div class="bg-white dark:bg-slate-800 shadow-lg rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-                        <h3 class="text-xl font-semibold mb-4 text-center text-slate-800 dark:text-white">Software Developer Skills</h3>
+            <div class="fade-in-section max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-slate-900 dark:text-white">Technical Skills</h2>
+                <div class="space-y-12">
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-slate-800 dark:text-white">Backend & Systems</h3>
                         <div class="flex flex-wrap justify-center gap-3">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Java</span>
-                            <span class="skill-badge">Data Structures & Algorithms</span>
-                            <span class="skill-badge">Object-Oriented Programming</span>
-                            <span class="skill-badge">REST APIs</span>
-                            <span class="skill-badge">Git & GitHub</span>
+                            <span class="skill-badge">FastAPI</span><span class="skill-badge">Docker</span><span class="skill-badge">Microservices</span><span class="skill-badge">Redis</span><span class="skill-badge">System Design</span>
                         </div>
                     </div>
 
-                    <!-- AI/ML + GenAI Skills Card -->
-                    <div class="bg-white dark:bg-slate-800 shadow-lg rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-                        <h3 class="text-xl font-semibold mb-4 text-center text-slate-800 dark:text-white">AI/ML & GenAI Skills</h3>
+                    <div>
+                         <h3 class="text-xl font-semibold mb-6 text-slate-800 dark:text-white">Cloud & DevOps</h3>
                         <div class="flex flex-wrap justify-center gap-3">
-                            <span class="skill-badge">Machine Learning</span>
-                            <span class="skill-badge">TensorFlow</span>
-                            <span class="skill-badge">PyTorch</span>
-                            <span class="skill-badge">Scikit-learn</span>
-                            <span class="skill-badge">Hugging Face</span>
-                            <span class="skill-badge">OpenAI API</span>
-                            <span class="skill-badge">LangChain</span>
-                            <span class="skill-badge">Prompt Engineering</span>
-                            <span class="skill-badge">LLMs (OpenAI, Gemini)</span>
-                            <span class="skill-badge">LLM Fine-Tuning</span>
+                            <span class="skill-badge">AWS (Lambda, CloudWatch)</span><span class="skill-badge">CI/CD</span><span class="skill-badge">GitHub Actions</span><span class="skill-badge">Prometheus</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 text-slate-800 dark:text-white">Programming & Databases</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Python</span><span class="skill-badge">Java</span><span class="skill-badge">C/C++</span><span class="skill-badge">SQL</span><span class="skill-badge">PostgreSQL</span><span class="skill-badge">SQLite</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- =================================================================== -->
+        <!-- END: UPDATED SKILLS SECTION -->
+        <!-- =================================================================== -->
 
 
         <!-- Contact Section -->
         <section id="contact" class="py-20 md:py-32">
             <div class="fade-in-section max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">Get In Touch</h2>
-                <p class="text-slate-600 dark:text-slate-400 mb-10">Have a question, an opportunity, or just want to chat about tech? Feel free to connect with me.</p>
+                <p class="text-slate-600 dark:text-slate-400 mb-10">I'm currently seeking new graduate opportunities for 2026. Have a question or an opportunity? Feel free to connect.</p>
                 <div class="flex justify-center items-center space-x-6">
                      <a href="mailto:pavan9542644804@gmail.com" class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">pavan9542644804@gmail.com</a>
                      <span>&bull;</span>
@@ -375,7 +381,6 @@
     <footer class="bg-slate-100 dark:bg-slate-800/50 mt-16 border-t border-slate-200 dark:border-slate-800">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500 dark:text-slate-400">
             <p>&copy; 2025 Pavan Gannoju. All rights reserved.</p>
-            <p class="text-sm mt-2">Built with ❤️ and a little help from AI.</p>
         </div>
     </footer>
 
@@ -383,32 +388,25 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // --- Dark/Light Mode Toggle ---
             const themeToggleBtn = document.getElementById('theme-toggle');
-
             const toggleTheme = () => {
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
             };
-            
             themeToggleBtn.addEventListener('click', toggleTheme);
 
-            // --- Mobile Menu Toggle ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // Close mobile menu when a link is clicked
             mobileMenu.addEventListener('click', (e) => {
                 if (e.target.tagName === 'A') {
                     mobileMenu.classList.add('hidden');
                 }
             });
 
-
-            // --- Sticky Header on Scroll ---
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -418,10 +416,7 @@
                 }
             });
 
-
-            // --- Scroll-Reveal Animations ---
             const fadeInSections = document.querySelectorAll('.fade-in-section');
-
             const sectionObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -433,7 +428,6 @@
                 rootMargin: '0px',
                 threshold: 0.1
             });
-
             fadeInSections.forEach(section => {
                 sectionObserver.observe(section);
             });
@@ -442,3 +436,4 @@
     </script>
 </body>
 </html>
+
